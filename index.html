@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="css/hover-min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton|Play" rel="stylesheet">
+<title>astro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="index.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+            <link rel="stylesheet" href="css/animate.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Francois+One|Righteous" rel="stylesheet">
+          <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800' rel='stylesheet' type='text/css'>
+          <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,300,200,100,900' rel='stylesheet' type='text/css'>
+          <link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Muli|Open+Sans" rel="stylesheet">
+
+<link href="hover.css" rel="stylesheet" media="all">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+    </head>
+
+<body>
+
+<section class="section1">
+
+<a href="#home"><img src="img/astros1.png"></a>
+
+
+
+<a href="#welcome" class="hvr-pulse"><img src="img/arrow.png" width="100px" height="100px"></a>
+
+
+
+
+</section>
+<section class="section2">
+  <a id=welcome><h1 id="welcome-h1"> Welcome to Astro </h1></a>
+
+
+
+<p id="p1">
+  welcome to the galaxy's leading astro-headgear re-seller.
+  here you can find top of the range, in season protection for all of your
+  intergalactic travels.
+  whether you're after world domination or even just to glance at the stars, we have you
+  covered.</p>
+  <p id=p2>Take a look below to see what we have in stock.. </p>
+  <p id=p3> click for more information
+
+</section>
+
+
+<section class="section-3">
+
+  <a href="alien.html"> <img class="hvr-grow"  src="img/alien-b.png"  height="200px" width="200x" >
+<a href="2001.html"><img class="hvr-grow"src="img/2001-b.png" height="200px" width="200px" >
+<a href="earth.html"><img class="hvr-grow" src="img/earth-b.png" height="200px" width="200px">
+
+
+
+<a href="interstellar.html"><img class="hvr-grow" src="img/inter-b.png" height="200px" width="200px" >
+<a href="martian.html"><img  class="hvr-grow"src="img/martian-b.png" height="200px" width="200px" >
+<a href="marvin.html"><img class="hvr-grow" src="img/marvin-b.png" height="200px" width="200px" >
+
+</section>
+
+
+
+<footer class="footer1">
+      <h1 id="footer123"><a href="img/astroai.ai" download >download</a></h1>
+                    </footer>
+
+
+<script>
+/*Interactivity to determine when an animated element in in view. In view elements trigger our animation*/
+$(document).ready(function() {
+
+  //window and animation items
+  var animation_elements = $.find('.animation-element');
+  var web_window = $(window);
+
+  //check to see if any animation containers are currently in view
+  function check_if_in_view() {
+    //get current window information
+    var window_height = web_window.height();
+    var window_top_position = web_window.scrollTop();
+    var window_bottom_position = (window_top_position + window_height);
+
+    //iterate through elements to see if its in view
+    $.each(animation_elements, function() {
+
+      //get the element sinformation
+      var element = $(this);
+      var element_height = $(element).outerHeight();
+      var element_top_position = $(element).offset().top;
+      var element_bottom_position = (element_top_position + element_height);
+
+      //check to see if this current container is visible (its viewable if it exists between the viewable space of the viewport)
+      if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
+        element.addClass('in-view');
+      } else {
+        element.removeClass('in-view');
+      }
+    });
+
+  }
+
+  //on or scroll, detect elements in view
+  $(window).on('scroll resize', function() {
+      check_if_in_view()
+    })
+    //trigger our scroll event on initial load
+  $(window).trigger('scroll');
+
+});</script>
+
+</BODY>
+
+
+
+</HTML>
